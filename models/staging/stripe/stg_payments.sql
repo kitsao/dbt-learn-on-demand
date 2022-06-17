@@ -5,4 +5,4 @@ select
     status as order_status,
     amount / 100 as total
 
-from raw.stripe.payment 
+from {{ source('stripe', 'payment') }}
